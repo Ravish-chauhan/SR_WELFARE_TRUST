@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Shakti Foundation | Empowering Women, Transforming Lives",
+  title: "SR Welfare Trust | Empowering Women, Transforming Lives",
   description:
-    "Shakti Foundation is a women-focused NGO dedicated to empowering women through education, healthcare, skill development, and community support. Join us in creating lasting change.",
+    "SR Welfare Trust is a women-focused NGO dedicated to empowering women through education, healthcare, skill development, and community support. Join us in creating lasting change.",
   keywords: [
     "women empowerment",
     "NGO",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "gender equality",
   ],
   openGraph: {
-    title: "Shakti Foundation | Empowering Women, Transforming Lives",
+    title: "SR Welfare Trust | Empowering Women, Transforming Lives",
     description:
       "Dedicated to empowering women through education, healthcare, skill development, and community support.",
     type: "website",
