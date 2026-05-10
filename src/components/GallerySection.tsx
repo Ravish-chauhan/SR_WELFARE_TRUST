@@ -65,7 +65,7 @@ export default function GallerySection() {
         setupMarquee(row2Ref.current, 1, 25);
     }, []);
 
-    const MarqueeRow = ({ images, rowRef }: { images: typeof galleryImagesRow1, rowRef: React.RefObject<HTMLDivElement> }) => (
+    const MarqueeRow = ({ images, rowRef }: { images: typeof galleryImagesRow1, rowRef: React.RefObject<HTMLDivElement | null> }) => (
         <div className="relative overflow-hidden w-full py-2">
             <div
                 ref={rowRef}
