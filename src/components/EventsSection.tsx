@@ -34,7 +34,7 @@ const events = [
             "Certification provided",
             "Business mentoring",
         ],
-        image: "/images/cause-education.png",
+        image: "/images/cause-makeup.png",
     },
     {
         id: 3,

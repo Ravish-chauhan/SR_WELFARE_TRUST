@@ -158,7 +158,7 @@ export default function DonationSection() {
                                 </div>
                                 <div className="p-6 bg-[#f9fafb] rounded-3xl border border-gray-100">
                                     <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Bank Name</p>
-                                    <p className="text-lg font-bold text-[#1a3a3a]">State Bank of India</p>
+                                    <p className="text-lg font-bold text-[#1a3a3a]">Canara Bank</p>
                                 </div>
                             </div>
 
@@ -167,9 +167,9 @@ export default function DonationSection() {
                                 <div className="p-6 bg-[#1a3a3a] rounded-[32px] text-white flex items-center justify-between group/ac overflow-hidden shadow-lg shadow-black/5">
                                     <div>
                                         <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest mb-1">Account Number</p>
-                                        <p className="text-lg sm:text-xl font-bold tracking-wider font-mono">4200 1234 5678 90</p>
+                                        <p className="text-lg sm:text-xl font-bold tracking-wider font-mono">1200 2706 9070</p>
                                     </div>
-                                    <button onClick={() => copyToClipboard("42001234567890")} className="p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all flex flex-col items-center gap-1">
+                                    <button onClick={() => copyToClipboard("120027069070")} className="p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all flex flex-col items-center gap-1">
                                         <Copy className="w-4 h-4" />
                                         <span className="text-[7px] font-bold opacity-60">COPY</span>
                                     </button>
@@ -178,9 +178,9 @@ export default function DonationSection() {
                                 <div className="p-6 bg-primary rounded-[32px] text-white flex items-center justify-between group/ifsc overflow-hidden shadow-lg shadow-primary/10">
                                     <div>
                                         <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest mb-1">IFSC Code</p>
-                                        <p className="text-lg sm:text-xl font-bold tracking-widest font-mono uppercase">SBIN0001234</p>
+                                        <p className="text-lg sm:text-xl font-bold tracking-widest font-mono uppercase">CNRB0018769</p>
                                     </div>
-                                    <button onClick={() => copyToClipboard("SBIN0001234")} className="p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all flex flex-col items-center gap-1">
+                                    <button onClick={() => copyToClipboard("CNRB0018769")} className="p-3 rounded-2xl bg-white/10 hover:bg-white/20 transition-all flex flex-col items-center gap-1">
                                         <Copy className="w-4 h-4" />
                                         <span className="text-[7px] font-bold opacity-60">COPY</span>
                                     </button>
@@ -223,10 +223,23 @@ export default function DonationSection() {
                                     <input type="text" required placeholder="Phone" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 outline-none focus:bg-white focus:ring-2 focus:ring-primary/20 transition-all" />
                                     <input type="text" required placeholder="Txn ID" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 outline-none focus:bg-white focus:ring-2 focus:ring-primary/20 transition-all" />
                                 </div>
-                                <div className="p-8 rounded-[32px] border-2 border-dashed border-gray-100 bg-gray-50 flex flex-col items-center justify-center">
-                                    <Upload className="w-8 h-8 text-gray-300 mb-2" />
-                                    <p className="text-xs font-bold text-gray-400">Apply Payment Screenshot</p>
-                                </div>
+                                <label className="p-8 rounded-[32px] border-2 border-dashed border-primary/20 bg-primary/5 flex flex-col items-center justify-center cursor-pointer hover:bg-primary/10 transition-all">
+                                    <input 
+                                        type="file" 
+                                        accept="image/*" 
+                                        className="hidden" 
+                                        onChange={(e) => {
+                                            if (e.target.files && e.target.files[0]) {
+                                                setFormData({ ...formData, proof: e.target.files[0] });
+                                            }
+                                        }} 
+                                        required
+                                    />
+                                    <Upload className="w-8 h-8 text-primary/40 mb-2" />
+                                    <p className="text-xs font-bold text-primary/60 text-center px-4 truncate max-w-full">
+                                        {formData.proof ? formData.proof.name : "Click to upload Payment Screenshot"}
+                                    </p>
+                                </label>
                                 <button type="submit" disabled={isSubmitting} className="w-full py-5 rounded-2xl bg-accent text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all disabled:opacity-50">
                                     Confirm Support
                                 </button>

@@ -24,10 +24,9 @@ export default function ContactSection() {
     };
 
     const contactInfo = [
-        { icon: <MapPin className="w-5 h-5" />, label: "Visit Us", value: "123 Women Empowerment Road, New Delhi, India 110001" },
-        { icon: <Mail className="w-5 h-5" />, label: "Email Us", value: "info@srwelfare.org" },
-        { icon: <Phone className="w-5 h-5" />, label: "Call Us", value: "+91 12345 67890" },
-        { icon: <Clock className="w-5 h-5" />, label: "Office Hours", value: "Mon – Sat, 9:00 AM – 6:00 PM" },
+        { icon: <MapPin className="w-5 h-5" />, label: "Visit Us", value: "550, Masuri, Ghaziabad, UP 201015" },
+        { icon: <Mail className="w-5 h-5" />, label: "Email Us", value: "help.srwelfaretrust@gmail.com" },
+        { icon: <Phone className="w-5 h-5" />, label: "Call Us", value: "+91 89202 33946" },
     ];
 
     return (

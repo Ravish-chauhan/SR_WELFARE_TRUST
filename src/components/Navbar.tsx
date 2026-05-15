@@ -1,20 +1,47 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Programs", href: "#programs" },
-    { name: "Impact", href: "#impact" },
-    { name: "Stories", href: "#stories" },
+    { name: "Causes", href: "#causes" },
+    { name: "Events", href: "#events" },
+    { name: "Gallery", href: "#gallery" },
     { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        const fab = document.getElementById("fab-wrapper");
+        
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+            if (fab) {
+                fab.style.opacity = "0";
+                fab.style.pointerEvents = "none";
+                fab.style.transition = "all 0.3s ease-in-out";
+            }
+        } else {
+            document.body.style.overflow = "";
+            if (fab) {
+                fab.style.opacity = "1";
+                fab.style.pointerEvents = "auto";
+            }
+        }
+        
+        return () => {
+            document.body.style.overflow = "";
+            if (fab) {
+                fab.style.opacity = "1";
+                fab.style.pointerEvents = "auto";
+            }
+        };
+    }, [isOpen]);
 
     return (
         <nav className="sticky top-0 left-0 right-0 z-50 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.08)] border-b border-black/[0.03]">
@@ -73,18 +100,18 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="lg:hidden p-2 rounded-lg hover:bg-primary-50 transition-colors z-50"
+                        className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/5 active:scale-95 transition-all duration-300 z-50"
                         aria-label="Toggle menu"
                     >
-                        <div className="w-6 h-5 flex flex-col justify-between">
+                        <div className="relative w-[22px] h-[16px]">
                             <span
-                                className={`w-full h-0.5 bg-[#366861] rounded-full transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""}`}
+                                className={`absolute left-0 w-full h-[2.5px] rounded-full transition-all duration-300 ease-out origin-center ${isOpen ? "top-[7px] rotate-45 bg-primary" : "top-0 bg-[#1a3a3a]"}`}
                             />
                             <span
-                                className={`w-full h-0.5 bg-[#366861] rounded-full transition-all duration-300 ${isOpen ? "opacity-0" : ""}`}
+                                className={`absolute left-0 top-[7px] w-full h-[2.5px] bg-[#1a3a3a] rounded-full transition-all duration-300 ease-out origin-center ${isOpen ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"}`}
                             />
                             <span
-                                className={`w-full h-0.5 bg-[#366861] rounded-full transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
+                                className={`absolute left-0 w-full h-[2.5px] rounded-full transition-all duration-300 ease-out origin-center ${isOpen ? "top-[7px] -rotate-45 bg-primary" : "bottom-0 bg-[#1a3a3a]"}`}
                             />
                         </div>
                     </button>

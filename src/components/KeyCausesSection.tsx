@@ -40,7 +40,7 @@ const causes = [
         title: "Education & Safety",
         description:
             "Empowering children through quality education, safety awareness programs, and recognizing young achievers who inspire their communities.",
-        image: "/images/cause-education.png",
+        image: "/images/cause-education-v2.png",
         icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -561,7 +561,7 @@ export default function KeyCausesSection() {
 
                                         {/* Learn more link */}
                                         <div
-                                            className="mt-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
+                                            className="mt-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
                                             style={{ color: "var(--primary)" }}
                                         >
                                             <span>Learn More</span>

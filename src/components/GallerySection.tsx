@@ -97,7 +97,7 @@ export default function GallerySection() {
 
     return (
         <section id="gallery" className="py-24 bg-[#fdfaf5] overflow-hidden border-t border-black/5">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
                 <p
                     className="text-lg sm:text-xl mb-3"
                     style={{
@@ -109,11 +109,15 @@ export default function GallerySection() {
                 >
                     Our Infinite Impact
                 </p>
-                <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl lg:text-[52px] font-bold text-[#1a3a3a] leading-tight mb-4">
-                    Visual <span className="gradient-text">Journey</span>
+                <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a3a3a] leading-tight mb-4">
+                    Visual <span style={{ color: "var(--primary)" }}>Journey</span>
                 </h2>
-                <div className="section-divider mx-auto mb-6" />
-                <p className="max-w-2xl mx-auto text-lg text-[#4a6e6e]">
+                <div className="flex items-center justify-center gap-1 mb-6">
+                    <div className="w-8 h-[2px] rounded-full" style={{ background: "var(--primary)" }} />
+                    <div className="w-2 h-2 rounded-full" style={{ background: "var(--primary)" }} />
+                    <div className="w-8 h-[2px] rounded-full" style={{ background: "var(--primary)" }} />
+                </div>
+                <p className="max-w-2xl mx-auto text-text-secondary text-base">
                     A seamless stream of heart-touching moments, moving forward just like our mission.
                 </p>
             </div>

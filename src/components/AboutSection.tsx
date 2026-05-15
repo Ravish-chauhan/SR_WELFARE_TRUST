@@ -28,10 +28,10 @@ export default function AboutSection() {
                             <div className="relative w-full max-w-[500px] aspect-[0.9/1] lg:ml-0 mb-[-20px] lg:mb-0">
 
                                 {/* Vertical Teal Bar */}
-                                <div className="absolute top-0 left-6 lg:left-6 w-5 h-[60%] bg-primary z-0" />
+                                <div className="absolute top-0 left-[8%] sm:left-6 w-5 h-[60%] bg-primary z-0" />
 
                                 {/* Main Top-Right Image */}
-                                <div className="absolute top-0 right-0 w-[85%] h-[75%] z-10 overflow-hidden shadow-2xl shadow-black/10">
+                                <div className="absolute top-0 right-[5%] sm:right-0 w-[85%] h-[75%] z-10 overflow-hidden shadow-2xl shadow-black/10">
                                     <Image
                                         src="/images/about-img1.jpeg"
                                         alt="Care"
@@ -42,7 +42,7 @@ export default function AboutSection() {
                                 </div>
 
                                 {/* Bottom-Left Overlapping Image */}
-                                <div className="absolute bottom-14 left-4 lg:left-4 w-[45%] h-[44%] z-20 border-[8px] border-white overflow-hidden shadow-xl">
+                                <div className="absolute bottom-14 left-[2%] sm:left-4 w-[45%] h-[44%] z-20 border-[8px] border-white overflow-hidden shadow-xl">
                                     <Image
                                         src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=600&fit=crop"
                                         alt="Support"
@@ -52,7 +52,7 @@ export default function AboutSection() {
                                 </div>
 
                                 {/* "Helping Today" Handwritten Text & Icon (Bottom Right) */}
-                                <div className="absolute bottom-[14%] right-0 sm:right-[-5%] lg:right-[-12%] xl:right-[-2%] flex flex-col items-center gap-1 z-30">
+                                <div className="absolute bottom-[14%] right-[1%] sm:right-[-5%] lg:right-[-12%] xl:right-[-2%] flex flex-col items-center gap-1 z-30">
                                     <div className="flex items-baseline gap-2 text-primary">
                                         <span className="font-[family-name:var(--font-heading)] text-2xl sm:text-3xl font-bold lowercase italic tracking-tight drop-shadow-sm">
                                             #Helping Today
@@ -116,13 +116,6 @@ export default function AboutSection() {
 
                             {/* CTA row */}
                             <div className="flex flex-wrap items-center gap-8">
-                                <a
-                                    href="#programs"
-                                    className="px-10 py-4 bg-primary text-white font-bold text-xs uppercase tracking-[0.2em] rounded-sm transition-all duration-300 hover:bg-primary-dark hover:shadow-xl"
-                                >
-                                    Know More
-                                </a>
-
                                 {/* Phone */}
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-primary">
@@ -132,7 +125,7 @@ export default function AboutSection() {
                                     </div>
                                     <div>
                                         <p className="text-[10px] text-text-muted uppercase font-bold tracking-widest">Call Us Anytime</p>
-                                        <p className="text-base font-bold text-foreground">+91 98765 43210</p>
+                                        <p className="text-base font-bold text-foreground">+91 89202 33946</p>
                                     </div>
                                 </div>
                             </div>

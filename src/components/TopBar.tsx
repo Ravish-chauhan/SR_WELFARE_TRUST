@@ -17,7 +17,7 @@ export default function TopBar() {
                     <div className="flex items-center gap-6">
                         {/* Phone */}
                         <Link
-                            href="tel:+911234567890"
+                            href="tel:+918920233946"
                             className="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 group"
                         >
                             <svg
@@ -34,7 +34,7 @@ export default function TopBar() {
                                 />
                             </svg>
                             <span className="text-xs font-medium tracking-wide">
-                                +91 12345 67890
+                                +91 89202 33946
                             </span>
                         </Link>
 
@@ -43,7 +43,7 @@ export default function TopBar() {
 
                         {/* Email */}
                         <Link
-                            href="mailto:info@srwelfare.org"
+                            href="mailto:help.srwelfaretrust@gmail.com"
                             className="flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 group"
                         >
                             <svg
@@ -60,7 +60,7 @@ export default function TopBar() {
                                 />
                             </svg>
                             <span className="text-xs font-medium tracking-wide">
-                                info@srwelfare.org
+                                help.srwelfaretrust@gmail.com
                             </span>
                         </Link>
                     </div>
@@ -116,7 +116,7 @@ export default function TopBar() {
 
                         {/* WhatsApp */}
                         <Link
-                            href="https://wa.me/911234567890"
+                            href="https://wa.me/918920233946"
                             target="_blank"
                             aria-label="WhatsApp"
                             className="w-7 h-7 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-white/15 transition-all duration-200"

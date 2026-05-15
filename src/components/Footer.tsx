@@ -111,7 +111,7 @@ export default function Footer() {
                         </div>
                         <div>
                             <p className="text-[10px] uppercase font-black tracking-widest text-white/40">Location</p>
-                            <p className="text-sm font-bold text-white/80">Village Address, India</p>
+                            <p className="text-sm font-bold text-white/80">550, Masuri, Ghaziabad, UP</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-5 border-y md:border-y-0 md:border-x border-white/10 py-6 md:py-0 md:px-8">
@@ -120,7 +120,7 @@ export default function Footer() {
                         </div>
                         <div>
                             <p className="text-[10px] uppercase font-black tracking-widest text-white/40">Helpline</p>
-                            <a href="tel:+91XXXXXXXXXX" className="text-sm font-bold text-white/80 hover:text-accent transition-colors">+91 12345 67890</a>
+                            <a href="tel:+918920233946" className="text-sm font-bold text-white/80 hover:text-accent transition-colors">+91 89202 33946</a>
                         </div>
                     </div>
                     <div className="flex items-center gap-5">
@@ -129,7 +129,7 @@ export default function Footer() {
                         </div>
                         <div>
                             <p className="text-[10px] uppercase font-black tracking-widest text-white/40">Email Us</p>
-                            <a href="mailto:info@srwelfaretrust.org" className="text-sm font-bold text-white/80 hover:text-accent transition-colors">info@srwelfare.org</a>
+                            <a href="mailto:help.srwelfaretrust@gmail.com" className="text-sm font-bold text-white/80 hover:text-accent transition-colors">help.srwelfaretrust@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -143,9 +143,14 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <p className="text-xs text-white/30 font-bold uppercase tracking-[0.2em]">
-                        © 2025 SR WELFARE TRUST. Registered Charity.
-                    </p>
+                    <div className="flex flex-col items-center text-center gap-1">
+                        <p className="text-xs text-white/30 font-bold uppercase tracking-[0.2em]">
+                            © 2025 SR WELFARE TRUST. Registered Charity.
+                        </p>
+                        <p className="text-[10px] text-white/20 font-bold uppercase tracking-widest">
+                            Made by <a href="https://elvion.in" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-accent transition-colors underline decoration-white/10 hover:decoration-accent underline-offset-2">Elvion</a>
+                        </p>
+                    </div>
 
                     <div className="flex items-center gap-8 text-[11px] font-black uppercase text-white/30 tracking-widest">
                         <a href="#" className="hover:text-accent transition-colors">Privacy</a>

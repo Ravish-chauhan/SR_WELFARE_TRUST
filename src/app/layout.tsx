@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingActionButton from "@/components/FloatingActionButton";
 
 export const metadata: Metadata = {
   title: "SR Welfare Trust | Empowering Women, Transforming Lives",
@@ -29,7 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <FloatingActionButton />
+      </body>
     </html>
   );
 }
