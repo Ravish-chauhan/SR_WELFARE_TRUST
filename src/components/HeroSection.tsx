@@ -1,24 +1,89 @@
 "use client";
 
 import Image from "next/image";
-import { Heart, Gift, ArrowRight, ShieldCheck, Users, Globe } from "lucide-react";
+import { Gift, ArrowRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+
+const heroSlides = [
+    {
+        src: "/images/hero-bg1.jpeg",
+        alt: "Indian rural woman - SR Welfare Trust empowerment",
+        label: "Women Empowerment",
+    },
+    {
+        src: "/images/hero-bg2.png",
+        alt: "Women self-help group meeting - SR Welfare Trust",
+        label: "Self-Help Groups",
+    },
+    {
+        src: "/images/hero-bg3.png",
+        alt: "Rural women literacy education - SR Welfare Trust",
+        label: "Education & Literacy",
+    },
+    {
+        src: "/images/hero-bg4.png",
+        alt: "Village healthcare for mothers and children - SR Welfare Trust",
+        label: "Healthcare Outreach",
+    },
+    {
+        src: "/images/hero-bg5.png",
+        alt: "Women skill development training - SR Welfare Trust",
+        label: "Skill Development",
+    },
+];
 
 export default function HeroSection() {
+    const [current, setCurrent] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
+    const goTo = useCallback(
+        (index: number) => {
+            if (isTransitioning || index === current) return;
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setCurrent(index);
+                setIsTransitioning(false);
+            }, 500);
+        },
+        [current, isTransitioning]
+    );
+
+    const next = useCallback(() => {
+        const nextIndex = (current + 1) % heroSlides.length;
+        goTo(nextIndex);
+    }, [current, goTo]);
+
+    // Auto-advance every 5 seconds
+    useEffect(() => {
+        const timer = setInterval(next, 5000);
+        return () => clearInterval(timer);
+    }, [next]);
+
     return (
         <section
             id="home"
             className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden bg-[#1a3a3a]"
         >
-            {/* Full-screen background image with Ken Burns effect */}
+            {/* Slideshow background images */}
             <div className="absolute inset-0 z-0 overflow-hidden">
-                <Image
-                    src="/images/hero-bg1.jpeg"
-                    alt="Indian women empowerment - SR Welfare Trust"
-                    fill
-                    className="object-cover object-[80%_center] sm:object-[95%_center] scale-100"
-                    priority
-                    sizes="100vw"
-                />
+                {heroSlides.map((slide, index) => (
+                    <div
+                        key={slide.src}
+                        className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+                        style={{ opacity: index === current ? 1 : 0 }}
+                    >
+                        <Image
+                            src={slide.src}
+                            alt={slide.alt}
+                            fill
+                            className={`object-cover object-[80%_center] sm:object-[95%_center] transition-transform duration-[8000ms] ease-linear ${
+                                index === current ? "scale-110" : "scale-100"
+                            }`}
+                            priority={index === 0}
+                            sizes="100vw"
+                        />
+                    </div>
+                ))}
 
                 {/* Advanced Multi-layer Overlay System */}
                 {/* 1. Deep Primary Overlay (Left to Right) */}
@@ -40,7 +105,8 @@ export default function HeroSection() {
                 <div className="max-w-4xl">
                     {/* Massive Impact Headline */}
                     <h1 className="font-[family-name:var(--font-heading)] text-[34px] sm:text-6xl lg:text-[85px] font-bold leading-[1.1] tracking-[0.01em] [word-spacing:0.08em] sm:[word-spacing:normal] text-white mb-8 animate-fade-in-up drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                        Together, <span className="text-accent italic relative">
+                        Together,{" "}
+                        <span className="text-accent italic relative">
                             We Can
                         </span>
                         <br className="hidden sm:block" />
@@ -73,6 +139,8 @@ export default function HeroSection() {
                     </div>
                 </div>
             </div>
+
+
         </section>
     );
 }

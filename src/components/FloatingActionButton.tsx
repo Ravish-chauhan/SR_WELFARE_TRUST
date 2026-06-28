@@ -9,7 +9,7 @@ export default function FloatingActionButton() {
   const pathname = usePathname();
 
   // Add paths here if you want to hide the FAB on certain pages
-  const hiddenPages: string[] = [];
+  const hiddenPages: string[] = ["/scholarship-test"];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
