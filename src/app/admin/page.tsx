@@ -55,7 +55,6 @@ interface StudentData {
     schoolName: string;
     neetAttempt: string;
     paymentProof?: string;
-    paymentProof?: string;
     createdAt: string;
 }
 
