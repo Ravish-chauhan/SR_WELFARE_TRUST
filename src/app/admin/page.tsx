@@ -55,19 +55,32 @@ interface StudentData {
     schoolName: string;
     neetAttempt: string;
     paymentProof?: string;
+    paymentProof?: string;
     createdAt: string;
 }
 
+interface LeadData {
+    _id: string;
+    name: string;
+    fatherName: string;
+    phone: string;
+    studentClass: string;
+    category: string;
+    createdAt: string;
+    isConverted: boolean;
+}
 export default function AdminPage() {
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [users, setUsers] = useState<UserData[]>([]);
     const [cards, setCards] = useState<CardData[]>([]);
     const [students, setStudents] = useState<StudentData[]>([]);
+    const [leads, setLeads] = useState<LeadData[]>([]);
     const [search, setSearch] = useState("");
     const [studentSearch, setStudentSearch] = useState("");
     const [activeTab, setActiveTab] = useState<"overview" | "users" | "cards" | "students">("overview");
     const [expandedStudent, setExpandedStudent] = useState<string | null>(null);
+    const [showPartialLeads, setShowPartialLeads] = useState(false);
 
     const [showModal, setShowModal] = useState(false);
     const [selectedUser, setSelectedUser] = useState<UserData | null>(null);
@@ -83,10 +96,12 @@ export default function AdminPage() {
             }),
             fetch("/api/admin/assign-card").then((r) => r.json()),
             fetch("/api/admin/scholarship-students").then((r) => r.json()),
-        ]).then(([userData, cardData, studentData]) => {
+            fetch("/api/admin/scholarship-leads").then((r) => r.json()),
+        ]).then(([userData, cardData, studentData, leadData]) => {
             if (userData) setUsers(userData.users || []);
             if (cardData) setCards(cardData.cards || []);
             if (studentData) setStudents(studentData.students || []);
+            if (leadData) setLeads(leadData.leads || []);
         }).finally(() => setLoading(false));
     }, [router]);
 
@@ -239,6 +254,7 @@ export default function AdminPage() {
                                         { label: "Cards Issued", value: cards.length, icon: CreditCard, color: "text-violet-400", bg: "bg-violet-500/10", border: "border-violet-500/20" },
                                         { label: "Active Cards", value: activeCards, icon: CheckCircle, color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
                                         { label: "Scholarship Apps", value: students.length, icon: GraduationCap, color: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/20" },
+                                        { label: "Form Leads", value: leads.length, icon: FileText, color: "text-pink-400", bg: "bg-pink-500/10", border: "border-pink-500/20" },
                                     ].map(stat => (
                                         <div key={stat.label} className={`bg-slate-900 border ${stat.border} rounded-xl p-5`}>
                                             <div className={`w-9 h-9 ${stat.bg} rounded-lg flex items-center justify-center mb-3`}>
@@ -388,14 +404,67 @@ export default function AdminPage() {
                         {/* Students Tab */}
                         {activeTab === "students" && (
                             <div>
-                                <div className="relative mb-4">
-                                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
-                                    <input type="text" placeholder="Search by name, phone, school or city..."
-                                        value={studentSearch} onChange={(e) => setStudentSearch(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 text-sm" />
+                                <div className="flex flex-col sm:flex-row items-center gap-3 mb-4">
+                                    <div className="relative flex-1 w-full">
+                                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                                        <input type="text" placeholder="Search by name, phone, school or city..."
+                                            value={studentSearch} onChange={(e) => setStudentSearch(e.target.value)}
+                                            className="w-full pl-10 pr-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 text-sm" />
+                                    </div>
+                                    <div className="bg-slate-900 border border-slate-800 p-1 rounded-lg flex shrink-0">
+                                        <button onClick={() => setShowPartialLeads(false)}
+                                            className={`px-4 py-1.5 rounded-md text-xs font-semibold transition-all ${!showPartialLeads ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-400 hover:text-white'}`}>
+                                            Complete ({students.length})
+                                        </button>
+                                        <button onClick={() => setShowPartialLeads(true)}
+                                            className={`px-4 py-1.5 rounded-md text-xs font-semibold transition-all ${showPartialLeads ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-400 hover:text-white'}`}>
+                                            Partial Leads ({leads.length})
+                                        </button>
+                                    </div>
                                 </div>
 
-                                <div className="space-y-2">
+                                {showPartialLeads ? (
+                                    <div className="space-y-3">
+                                        {leads.length === 0 && (
+                                            <div className="bg-slate-900 border border-slate-800 rounded-xl p-12 text-center">
+                                                <FileText className="w-8 h-8 text-slate-700 mx-auto mb-2" />
+                                                <p className="text-slate-500 text-sm">No leads captured yet</p>
+                                            </div>
+                                        )}
+                                        {leads.map((lead) => (
+                                            <div key={lead._id} className="bg-slate-900 border border-slate-800 rounded-xl px-5 py-4 flex items-center justify-between flex-wrap gap-4">
+                                                <div className="flex items-center gap-4">
+                                                    <div className="w-10 h-10 bg-pink-500/15 border border-pink-500/20 rounded-xl flex items-center justify-center text-pink-400 font-bold flex-shrink-0">
+                                                        {lead.name.charAt(0)}
+                                                    </div>
+                                                    <div>
+                                                        <div className="flex items-center gap-2">
+                                                            <p className="text-white font-semibold text-sm">{lead.name}</p>
+                                                            {lead.isConverted && (
+                                                                <span className="text-[10px] px-2 py-0.5 bg-emerald-500/15 border border-emerald-500/20 text-emerald-400 rounded-full flex items-center gap-1">
+                                                                    <CheckCircle className="w-3 h-3" /> Converted
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                        <div className="flex flex-wrap gap-x-3 gap-y-1 mt-1 text-xs text-slate-500">
+                                                            <span className="flex items-center gap-1"><Phone className="w-3 h-3" />{lead.phone}</span>
+                                                            <span>•</span>
+                                                            <span>{lead.studentClass}</span>
+                                                            <span>•</span>
+                                                            <span>{lead.category}</span>
+                                                            <span>•</span>
+                                                            <span>{new Date(lead.createdAt).toLocaleDateString("en-IN")}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href={`tel:${lead.phone}`} className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg text-xs font-medium transition-colors border border-slate-700 flex items-center gap-2">
+                                                    <Phone className="w-3.5 h-3.5" /> Call Lead
+                                                </a>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="space-y-2">
                                     {students.length === 0 && (
                                         <div className="bg-slate-900 border border-slate-800 rounded-xl p-12 text-center">
                                             <GraduationCap className="w-8 h-8 text-slate-700 mx-auto mb-2" />
@@ -509,7 +578,8 @@ export default function AdminPage() {
                                                 </div>
                                             );
                                         })}
-                                </div>
+                                    </div>
+                                )}
                             </div>
                         )}
                     </main>

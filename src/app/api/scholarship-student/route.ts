@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import ScholarshipStudent from "@/lib/models/ScholarshipStudent";
+import ScholarshipLead from "@/lib/models/ScholarshipLead";
 
 export async function POST(req: NextRequest) {
     try {
@@ -52,6 +53,16 @@ export async function POST(req: NextRequest) {
             neetAttempt,
             paymentProof: paymentProof || undefined,
         });
+
+        // If they had a partial lead, mark it as converted
+        try {
+            await ScholarshipLead.findOneAndUpdate(
+                { phone: phone.trim() },
+                { $set: { isConverted: true } }
+            );
+        } catch (e) {
+            console.error("Failed to update lead conversion status", e);
+        }
 
         return NextResponse.json(
             { message: "Application submitted successfully!", id: student._id },

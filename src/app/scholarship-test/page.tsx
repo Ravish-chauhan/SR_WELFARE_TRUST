@@ -90,7 +90,18 @@ export default function ScholarshipTestPage() {
         return Object.keys(errs).length === 0;
     };
 
-    const nextStep = () => { if (validateStep(step)) setStep(s => s + 1); };
+    const nextStep = () => {
+        if (validateStep(step)) {
+            if (step === 1) {
+                fetch("/api/scholarship-student/partial", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(form)
+                }).catch(() => {}); // silent fail is fine for leads
+            }
+            setStep(s => s + 1);
+        }
+    };
     const prevStep = () => setStep(s => s - 1);
 
     const handleSubmit = async () => {
