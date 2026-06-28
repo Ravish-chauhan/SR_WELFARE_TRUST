@@ -147,7 +147,7 @@ export default function AdminPage() {
     }
 
     const tabs = [
-        { id: "overview", label: "Overview", icon: LayoutDashboard },
+        { id: "overview", label: "Overview", icon: LayoutDashboard, count: undefined },
         { id: "users", label: "Users", icon: Users, count: users.length },
         { id: "cards", label: "Cards", icon: CreditCard, count: cards.length },
         { id: "students", label: "Scholarship", icon: GraduationCap, count: students.length },
