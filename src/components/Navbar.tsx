@@ -83,10 +83,10 @@ export default function Navbar() {
                     {[0, 1].map((i) => (
                         <div key={i} className="ticker-content flex items-center gap-8 pr-8">
                             {[
-                                "🎓 NEW: Free NEET Scholarship Test by SR Welfare Trust — Apply Now!",
+                                "🎓 NEW: NEET Scholarship Test by SR Welfare Trust — Apply Now!",
                                 "📚 Scholarship for Class 10th–12th & Droppers — Limited Seats!",
-                                "🏆 Free Offline Test · Full Study Support · Mentorship Included",
-                                "📝 Register at /scholarship-test — Completely Free!",
+                                "🏆 Offline Test · Full Study Support · Mentorship Included",
+                                "📝 Register at /scholarship-test",
                             ].map((msg) => (
                                 <Link key={msg} href="/scholarship-test"
                                     className="inline-flex items-center gap-2 text-white text-[11px] font-medium hover:text-yellow-200 transition-colors">

@@ -214,14 +214,14 @@ export default function ScholarshipTestPage() {
                                 NEET Scholarship Test — Registration Form
                             </h1>
                             <p className="text-gray-500 text-xs mt-1 leading-relaxed">
-                                SR Welfare Trust is conducting an <span className="text-[#366861] font-medium">offline NEET Scholarship Test</span> for meritorious students. Selected candidates receive a scholarship of <span className="text-[#366861] font-semibold">up to ₹40,000</span>, full study material support &amp; personal mentorship.
+                                SR Welfare Trust is conducting an <span className="text-[#366861] font-medium">offline NEET Scholarship Test</span> for meritorious students. The top 30 performers will receive a scholarship of <span className="text-[#366861] font-semibold">up to ₹1 Lakh</span>, full study material support &amp; personal mentorship.
                             </p>
                             <div className="flex items-center gap-3 mt-2">
                                 <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#366861] bg-[#366861]/8 border border-[#366861]/15 rounded-full px-2.5 py-1">
                                     📅 Expected Exam: 26 July 2026
                                 </span>
                                 <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-full px-2.5 py-1">
-                                    🏆 Up to ₹40,000 Scholarship
+                                    🏆 Up to ₹1 Lakh Scholarship
                                 </span>
                             </div>
                         </div>
@@ -356,7 +356,7 @@ export default function ScholarshipTestPage() {
                                 {/* ── Registration Fee QR ── */}
                                 <div className="mt-2 border border-[#366861]/20 rounded-xl overflow-hidden">
                                     <div className="bg-[#366861] px-4 py-2.5 flex items-center gap-2">
-                                        <span className="text-white text-sm font-semibold">💳 Registration Fee — ₹100</span>
+                                        <span className="text-white text-sm font-semibold">💳 Registration Fee — ₹250</span>
                                         <span className="ml-auto text-white/70 text-xs">Scan &amp; Pay · Upload Proof</span>
                                     </div>
                                     <div className="p-4 bg-[#f5faf9] flex flex-col sm:flex-row gap-5 items-start">
@@ -365,7 +365,7 @@ export default function ScholarshipTestPage() {
                                             <div className="border-2 border-[#366861]/25 rounded-xl p-1.5 bg-white shadow-sm">
                                                 <Image
                                                     src="/qr.jpeg"
-                                                    alt="UPI QR Code — ₹100 Registration Fee"
+                                                    alt="UPI QR Code — ₹250 Registration Fee"
                                                     width={130}
                                                     height={130}
                                                     className="w-[130px] h-[130px] object-contain rounded-lg"
@@ -386,7 +386,7 @@ export default function ScholarshipTestPage() {
                                             <div className="text-xs text-gray-600 space-y-1.5">
                                                 <p className="font-semibold text-gray-800">Steps to pay:</p>
                                                 <p>1️⃣ Scan the QR with GPay, PhonePe, Paytm or any UPI app</p>
-                                                <p>2️⃣ Pay exactly <span className="font-bold text-[#366861]">₹100</span> as registration fee</p>
+                                                <p>2️⃣ Pay exactly <span className="font-bold text-[#366861]">₹250</span> as registration fee</p>
                                                 <p>3️⃣ Screenshot the payment confirmation</p>
                                                 <p>4️⃣ Upload the screenshot below</p>
                                             </div>
@@ -501,7 +501,7 @@ export default function ScholarshipTestPage() {
                                             <span className="text-xl flex-shrink-0">💳</span>
                                             <div>
                                                 <p className="text-red-700 text-sm font-semibold">Payment Proof Required</p>
-                                                <p className="text-red-500 text-xs mt-0.5">You must pay the ₹100 registration fee and upload the payment screenshot before submitting.</p>
+                                                <p className="text-red-500 text-xs mt-0.5">You must pay the ₹250 registration fee and upload the payment screenshot before submitting.</p>
                                             </div>
                                         </div>
                                         <button

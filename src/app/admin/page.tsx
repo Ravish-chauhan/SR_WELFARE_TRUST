@@ -65,6 +65,7 @@ interface LeadData {
     phone: string;
     studentClass: string;
     category: string;
+    email?: string;
     createdAt: string;
     isConverted: boolean;
 }
@@ -447,6 +448,12 @@ export default function AdminPage() {
                                                         </div>
                                                         <div className="flex flex-wrap gap-x-3 gap-y-1 mt-1 text-xs text-slate-500">
                                                             <span className="flex items-center gap-1"><Phone className="w-3 h-3" />{lead.phone}</span>
+                                                            {lead.email && (
+                                                                <>
+                                                                    <span>•</span>
+                                                                    <span className="flex items-center gap-1"><Mail className="w-3 h-3" />{lead.email}</span>
+                                                                </>
+                                                            )}
                                                             <span>•</span>
                                                             <span>{lead.studentClass}</span>
                                                             <span>•</span>
@@ -494,6 +501,9 @@ export default function AdminPage() {
                                                             </div>
                                                             <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-1">
                                                                 <span className="text-slate-500 text-xs flex items-center gap-1"><Phone className="w-3 h-3" />{student.phone}</span>
+                                                                {student.email && (
+                                                                    <span className="text-slate-500 text-xs flex items-center gap-1"><Mail className="w-3 h-3" />{student.email}</span>
+                                                                )}
                                                                 <span className="text-slate-500 text-xs flex items-center gap-1"><BookOpen className="w-3 h-3" />{student.board} · {student.neetAttempt} attempt</span>
                                                                 <span className="text-slate-500 text-xs flex items-center gap-1"><MapPin className="w-3 h-3" />{student.city}, {student.state}</span>
                                                                 <span className="text-slate-500 text-xs flex items-center gap-1"><Calendar className="w-3 h-3" />{new Date(student.createdAt).toLocaleDateString("en-IN")}</span>
