@@ -164,7 +164,7 @@ export default function ScholarshipTestPage() {
                             </div>
                             <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-5 text-left">
                                 <p className="text-amber-800 text-xs font-semibold mb-1">📅 Expected Exam Date</p>
-                                <p className="text-amber-700 text-sm font-bold">26 July 2026</p>
+                                <p className="text-amber-700 text-sm font-bold">14 August 2026</p>
                                 <p className="text-amber-600 text-xs mt-1">Exact venue & time will be shared via call/SMS</p>
                             </div>
                             <Link href="/"
@@ -218,7 +218,7 @@ export default function ScholarshipTestPage() {
                             </p>
                             <div className="flex items-center gap-3 mt-2">
                                 <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#366861] bg-[#366861]/8 border border-[#366861]/15 rounded-full px-2.5 py-1">
-                                    📅 Expected Exam: 26 July 2026
+                                    📅 Expected Exam: 14 August 2026
                                 </span>
                                 <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-full px-2.5 py-1">
                                     🏆 Up to ₹1 Lakh Scholarship
@@ -484,7 +484,7 @@ export default function ScholarshipTestPage() {
                                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 flex items-start gap-2">
                                     <span className="text-lg">📅</span>
                                     <div>
-                                        <p className="text-amber-800 text-xs font-semibold">Expected Exam Date: <span className="text-amber-900">26 July 2026</span></p>
+                                        <p className="text-amber-800 text-xs font-semibold">Expected Exam Date: <span className="text-amber-900">14 August 2026</span></p>
                                         <p className="text-amber-600 text-xs mt-0.5">Our team will contact you with exact venue &amp; timing after registration.</p>
                                     </div>
                                 </div>
