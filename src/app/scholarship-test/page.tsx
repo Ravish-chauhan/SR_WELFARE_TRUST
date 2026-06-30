@@ -211,14 +211,17 @@ export default function ScholarshipTestPage() {
                         </div>
                         <div>
                             <h1 className="text-gray-900 font-bold text-lg leading-tight">
-                                NEET Scholarship Test — Registration Form
+                                NEET Scholarship Test - Registration Form
                             </h1>
                             <p className="text-gray-500 text-xs mt-1 leading-relaxed">
                                 SR Welfare Trust is conducting an <span className="text-[#366861] font-medium">offline NEET Scholarship Test</span> for meritorious students. The top 30 performers will receive a scholarship of <span className="text-[#366861] font-semibold">up to ₹1 Lakh</span>, full study material support &amp; personal mentorship.
                             </p>
-                            <div className="flex items-center gap-3 mt-2">
+                            <div className="flex flex-wrap items-center gap-3 mt-2">
                                 <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#366861] bg-[#366861]/8 border border-[#366861]/15 rounded-full px-2.5 py-1">
                                     📅 Expected Exam: 16 August 2026
+                                </span>
+                                <span className="inline-flex items-center gap-1 text-xs font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-full px-2.5 py-1">
+                                    ⏳ Last Date to Apply: 10 August
                                 </span>
                                 <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-full px-2.5 py-1">
                                     🏆 Up to ₹1 Lakh Scholarship
@@ -356,7 +359,7 @@ export default function ScholarshipTestPage() {
                                 {/* ── Registration Fee QR ── */}
                                 <div className="mt-2 border border-[#366861]/20 rounded-xl overflow-hidden">
                                     <div className="bg-[#366861] px-4 py-2.5 flex items-center gap-2">
-                                        <span className="text-white text-sm font-semibold">💳 Registration Fee — ₹250</span>
+                                        <span className="text-white text-sm font-semibold">💳 Registration Fee - ₹250</span>
                                         <span className="ml-auto text-white/70 text-xs">Scan &amp; Pay · Upload Proof</span>
                                     </div>
                                     <div className="p-4 bg-[#f5faf9] flex flex-col sm:flex-row gap-5 items-start">
@@ -365,7 +368,7 @@ export default function ScholarshipTestPage() {
                                             <div className="border-2 border-[#366861]/25 rounded-xl p-1.5 bg-white shadow-sm">
                                                 <Image
                                                     src="/qr.jpeg"
-                                                    alt="UPI QR Code — ₹250 Registration Fee"
+                                                    alt="UPI QR Code - ₹250 Registration Fee"
                                                     width={130}
                                                     height={130}
                                                     className="w-[130px] h-[130px] object-contain rounded-lg"

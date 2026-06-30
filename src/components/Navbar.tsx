@@ -83,8 +83,8 @@ export default function Navbar() {
                     {[0, 1].map((i) => (
                         <div key={i} className="ticker-content flex items-center gap-8 pr-8">
                             {[
-                                "🎓 NEW: NEET Scholarship Test by SR Welfare Trust — Apply Now!",
-                                "📚 Scholarship for Class 10th–12th & Droppers — Limited Seats!",
+                                "🎓 NEW: NEET Scholarship Test by SR Welfare Trust - Apply Now!",
+                                "📚 Scholarship for Class 10th-12th & Droppers - Limited Seats!",
                                 "🏆 Offline Test · Full Study Support · Mentorship Included",
                                 "📝 Register at /scholarship-test",
                             ].map((msg) => (
